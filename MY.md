@@ -29,4 +29,11 @@ while ; do huggingface-cli download --resume-download THUDM/chatglm3-6b --local-
 
 
 
+
+
+while ; do huggingface-cli download --repo-type dataset --resume-download wikitext --local-dir wikitext --revision main --include "wikitext-2-raw-v1/*"; e=$?; echo $e; if [ $e -eq 0  ]; then echo $e; break; else echo 'y'; fi; sleep 1; done
+while ; do huggingface-cli download --repo-type dataset --resume-download wikitext --local-dir wikitext --local-dir-use-symlinks=False --revision main --include "wikitext-2-raw-v1/*"; e=$?; echo $e; if [ $e -eq 0  ]; then echo $e; break; else echo 'y'; fi; sleep 1; done
+
+
+
 ```
